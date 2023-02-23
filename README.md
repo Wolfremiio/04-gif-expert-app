@@ -8,4 +8,4 @@ comandos para desplegar la app:
 2. npm run build 
 3. npm run dev  
 
-El stack utiliado ha sido (node, vite, Jest, React18)
+El stack utilizado ha sido (node, vite, Jest, React18)
