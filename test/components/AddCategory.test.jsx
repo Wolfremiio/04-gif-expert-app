@@ -20,7 +20,8 @@ describe('Testing in <AddCategory>', () => {
     test('Should be call  onNewCategory if the input have a value ', () => {
         
         const inputValue = 'Wolf';
-        render (<AddCategory onNewCategory = {() => {}}/>) 
+        const onNewCategory = jest.fn();
+        render (<AddCategory onNewCategory = {onNewCategory}/>) 
                
         const input = screen.getByRole('textbox'); 
         const form = screen.getByRole('form');
@@ -29,5 +30,8 @@ describe('Testing in <AddCategory>', () => {
         fireEvent.submit(form);
 
         expect(input.value).toBe('');
+        expect(onNewCategory).toHaveBeenCalled();
+        expect(onNewCategory).toHaveBeenCalledTimes(1);
+        expect(onNewCategory).toHaveBeenCalledWith(inputValue);
     });
 });  
