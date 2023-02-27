@@ -9,13 +9,13 @@ describe('Testing in <GifItem>', () => {
   const title= "Wolf";
   const url = "http://gifmixapp.com/";
 
-  test('Should make match with the snapshot ', () => {
+  test('Should be make match with the snapshot ', () => {
     const {container}= render (<GifItem url={ url } title={ title}/>)
 
     expect(container).toMatchSnapshot();
   });
 
-  test('Should show the picture with the URL and  correspondent Alt  ', () => {
+  test('Should be show the picture with the URL and  correspondent Alt  ', () => {
     render (<GifItem url={ url } title={ title}/>)
    //screen.debug();
     //expect(screen.getByRole('img').src).toBe(url); ---> Documentacion, como hacerlo de otra forma, pero me decanté por una mas clara y escalable.
@@ -26,7 +26,7 @@ describe('Testing in <GifItem>', () => {
    
   
   });
-  test('Should show the title in the component', () => {
+  test('Should be show the title in the component', () => {
     render (<GifItem url={ url } title={ title}/>) 
 
     expect(screen.getByText(title)).toBeTruthy();
